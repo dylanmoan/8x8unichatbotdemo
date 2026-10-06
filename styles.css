@@ -68,6 +68,8 @@ main {
     right: 24px;
     z-index: 1000;
     max-width: 120px;
+    transform: scale(0.5);
+    transform-origin: bottom right;
 }
 
 .chat-button-container {
@@ -108,6 +110,8 @@ main {
         bottom: 16px;
         right: 16px;
         max-width: 100px;
+        transform: scale(0.5);
+        transform-origin: bottom right;
     }
 }
 
@@ -128,5 +132,7 @@ main {
         bottom: 12px;
         right: 12px;
         max-width: 90px;
+        transform: scale(0.5);
+        transform-origin: bottom right;
     }
 }
