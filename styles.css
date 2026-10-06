@@ -61,14 +61,25 @@ main {
     height: 100%;
 }
 
-/* Chat Button Shell - Fixed position in lower right */
+/* Chat Button Shell - Base fixed positioning */
 .chat-button-shell {
     position: fixed;
     bottom: 24px;
-    right: 24px;
     z-index: 1000;
     max-width: 120px;
     transform: scale(0.5);
+    transform-origin: bottom center;
+}
+
+/* Left-side chat button */
+.chat-button-shell.chat-button-left {
+    left: 24px;
+    transform-origin: bottom left;
+}
+
+/* Right-side chat button */
+.chat-button-shell.chat-button-right {
+    right: 24px;
     transform-origin: bottom right;
 }
 
@@ -78,9 +89,15 @@ main {
     align-items: flex-end;
 }
 
+.chat-button-shell.chat-button-left .chat-button-container {
+    justify-content: flex-start;
+}
+
 /* Style the 8x8 chat button when it appears */
 .chat-button-container button,
 .chat-button-container [role="button"],
+#__8x8-chat-button-container-script_5777521205ec3f05bf0b477\.34181442 button,
+#__8x8-chat-button-container-script_5777521205ec3f05bf0b477\.34181442 [role="button"],
 #__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 button,
 #__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 [role="button"] {
     border-radius: 50% !important;
@@ -90,6 +107,8 @@ main {
 
 .chat-button-container button:hover,
 .chat-button-container [role="button"]:hover,
+#__8x8-chat-button-container-script_5777521205ec3f05bf0b477\.34181442 button:hover,
+#__8x8-chat-button-container-script_5777521205ec3f05bf0b477\.34181442 [role="button"]:hover,
 #__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 button:hover,
 #__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 [role="button"]:hover {
     transform: scale(1.1) !important;
@@ -108,10 +127,16 @@ main {
 
     .chat-button-shell {
         bottom: 16px;
-        right: 16px;
         max-width: 100px;
         transform: scale(0.5);
-        transform-origin: bottom right;
+    }
+
+    .chat-button-shell.chat-button-left {
+        left: 16px;
+    }
+
+    .chat-button-shell.chat-button-right {
+        right: 16px;
     }
 }
 
@@ -130,9 +155,15 @@ main {
 
     .chat-button-shell {
         bottom: 12px;
-        right: 12px;
         max-width: 90px;
         transform: scale(0.5);
-        transform-origin: bottom right;
+    }
+
+    .chat-button-shell.chat-button-left {
+        left: 12px;
+    }
+
+    .chat-button-shell.chat-button-right {
+        right: 12px;
     }
 }
