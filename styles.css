@@ -50,6 +50,7 @@ main {
     width: 100%;
     padding: 2rem 1rem;
     grid-column: 1;
+    position: relative;
 }
 
 .widget-container {
@@ -57,15 +58,40 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
-/* 8x8 Widget - Force center alignment */
-ai-studio-widget {
-    all: unset !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 auto !important;
+/* Chat Button Shell - Fixed position in lower right */
+.chat-button-shell {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    max-width: 120px;
+}
+
+.chat-button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* Style the 8x8 chat button when it appears */
+.chat-button-container button,
+.chat-button-container [role="button"],
+#__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 button,
+#__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 [role="button"] {
+    border-radius: 50% !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.chat-button-container button:hover,
+.chat-button-container [role="button"]:hover,
+#__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 button:hover,
+#__8x8-chat-button-container-script_8721059566ac54f429247a8\.21111392 [role="button"]:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Responsive Design */
@@ -76,6 +102,12 @@ ai-studio-widget {
 
     main {
         padding: 1rem;
+    }
+
+    .chat-button-shell {
+        bottom: 16px;
+        right: 16px;
+        max-width: 100px;
     }
 }
 
@@ -90,5 +122,11 @@ ai-studio-widget {
 
     main {
         padding: 0.5rem;
+    }
+
+    .chat-button-shell {
+        bottom: 12px;
+        right: 12px;
+        max-width: 90px;
     }
 }
